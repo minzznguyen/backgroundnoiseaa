@@ -311,19 +311,19 @@ def main(z):
 
     # NEED MODIFICATION FOR EACH INPUT AUDIO FILES
     # orginal file_name : target phrase
-    d = {
-        "check_the_mail_please": "check the sale please",
-        "heat_the_oven_to_three_hundred_fifty": "beat the oven to three hundred fifty",
-        "mute_the_audio_now": "mute the audio sound",
-        "open_the_garage_door":"open the garage floor",
-    }
-
     # d = {
-    #     "close_the_front_door": "lose the front door",
+    #     "check_the_mail_please": "check the sale please",
     #     "heat_the_oven_to_three_hundred_fifty": "beat the oven to three hundred fifty",
     #     "mute_the_audio_now": "mute the audio sound",
     #     "open_the_garage_door":"open the garage floor",
     # }
+
+    d = {
+        "close_the_front_door": "lose the front door",
+        "heat_the_oven_to_three_hundred_fifty": "beat the oven to three hundred fifty",
+        "mute_the_audio_now": "mute the audio sound",
+        "open_the_garage_door":"open the garage floor",
+    }
 
     inp_wav_file = commands[z]
     target = d[inp_wav_file[:-4]]
