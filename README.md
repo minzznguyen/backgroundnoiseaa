@@ -44,7 +44,7 @@ DeepSpeech may throw a warning saying "decoder library file does not exist" but 
 ## Running Attacks
 Now create and run an attack, for example:
 ```bash
-python3 run_audio_attack.py bg AudioCommand_20Len mark_6
+python3 run_audio_attack.py bg sample_input output
 ``` 
 Of course, `sample_input.wav` may be changed to any input audio file and `"hello world"` may be changed to any target transcription.
 
