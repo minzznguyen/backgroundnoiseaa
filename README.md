@@ -19,6 +19,22 @@ git clone -b 'v0.1.1' --single-branch --depth 1 https://github.com/mozilla/DeepS
 wget https://github.com/mozilla/DeepSpeech/releases/download/v0.1.1/deepspeech-0.1.1-models.tar.gz
 tar -xzf deepspeech-0.1.1-models.tar.gz && rm deepspeech-0.1.1-models.tar.gz
 ```
+
+Installing cuDNN 9
+
+```
+$ wget https://developer.download.nvidia.com/compute/cudnn/9.1.1/local_installers/cudnn-local-repo-ubuntu2004-9.1.1_1.0-1_amd64.deb
+
+$ sudo dpkg -i cudnn-local-repo-ubuntu2004-9.1.1_1.0-1_amd64.deb
+
+$ sudo cp /var/cudnn-local-repo-ubuntu2004-9.1.1/cudnn-*-keyring.gpg /usr/share/keyrings/
+
+$ sudo apt-get update
+
+$ sudo apt-get -y install cudnn
+
+```
+
 Finally, create the checkpoint used for the attack:
 ```
 python make_checkpoint.py
@@ -28,7 +44,7 @@ DeepSpeech may throw a warning saying "decoder library file does not exist" but 
 ## Running Attacks
 Now create and run an attack, for example:
 ```bash
-python run_audio_attack.py sample_input.wav "hello world"
+python3 run_audio_attack.py bg AudioCommand_20Len mark_6
 ``` 
 Of course, `sample_input.wav` may be changed to any input audio file and `"hello world"` may be changed to any target transcription.
 
